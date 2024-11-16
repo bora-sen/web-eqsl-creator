@@ -1,2 +1,18 @@
-// Import all of Bootstrap's CSS
+$white: #ffffff;
+
+$theme-colors: (
+    "light":      #dbe5ec,
+    "dark":       #000000,
+    "primary":    #0faccd,
+    "secondary":  #0273ba,
+    "info":       #278f46,
+    "success":    #01b159,
+    "warning":    #eccc01,
+    "danger":     #fb0021,
+);
 @import "bootstrap/scss/bootstrap";
+
+.preview-container {
+  width: 874px;
+  height: 620px;
+}
