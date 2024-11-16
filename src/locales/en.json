@@ -1,0 +1,12 @@
+{
+  "welcome": "Welcome to Web eQsl Card Creator!",
+  "callsign": "Call Sign",
+  "toCallSign":"DX Callsign",
+  "nameSurname": "Name & Surname",
+  "date": "QSO Date",
+  "message": "Your Message",
+  "country": "Country",
+  "state":"State",
+  "downloadCard":"Download Card",
+  "backgroundImage":"Background Image"
+}

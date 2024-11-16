@@ -1,0 +1,12 @@
+{
+  "welcome": "eQsl Kart Oluşturucuya Hoşgeldin!",
+  "callsign": "Çağrı İşareti",
+  "toCallSign": "DX Çağrı İşareti",
+  "nameSurname": "Ad Soyad",
+  "date": "QSO Tarihi",
+  "message": "Mesajınız",
+  "country": "Ülke",
+  "state": "Şehir",
+  "downloadCard": "Kartı İndir",
+  "backgroundImage": "Arkaplan"
+}
