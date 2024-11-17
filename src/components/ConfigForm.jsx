@@ -4,57 +4,6 @@ import { action_types, useConfigContext } from "../Context/ConfigContext"
 
 function ConfigForm() {
   const { t } = useLanguage()
-  const { dispatch } = useConfigContext()
-
-  function updateCallsign(e) {
-    dispatch({
-      type: action_types.UPDATE_CALLSIGN,
-      payload: e.target.value,
-    })
-  }
-
-  function updateToCallSign(e) {
-    dispatch({
-      type: action_types.UPDATE_TOCALLSIGN,
-      payload: e.target.value,
-    })
-  }
-
-  function updateNameSurname(e) {
-    dispatch({
-      type: action_types.UPDATE_NAMESURNAME,
-      payload: e.target.value,
-    })
-  }
-
-  function updateCountry(e) {
-    dispatch({
-      type: action_types.UPDATE_COUNTRY,
-      payload: e.target.value,
-    })
-  }
-
-  function updateState(e) {
-    dispatch({
-      type: action_types.UPDATE_STATE,
-      payload: e.target.value,
-    })
-  }
-
-  function updateBand(e) {
-    dispatch({
-      type: action_types.UPDATE_BAND,
-      payload: e.target.value,
-    })
-  }
-
-  function updateDate(e) {
-    dispatch({
-      type: action_types.UPDATE_DATE,
-      payload: e.target.value,
-    })
-  }
-
   return (
     <div className="p-3">
       <div className="mb-3 form-floating">
