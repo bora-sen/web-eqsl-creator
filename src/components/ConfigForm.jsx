@@ -16,18 +16,18 @@ function ConfigForm() {
           <div className="col">
             <FloatingTextInput labelText="toCallSign" index={11} updateFunction={updatefunctions.updateToCallSign} />
           </div>
-      </div>
+        </div>
 
         <FloatingTextInput labelText="nameSurname" index={12} updateFunction={updatefunctions.updateNameSurname} />
 
         <div className="row">
           <div className="col">
             <FloatingTextInput labelText="state" index={12} updateFunction={updatefunctions.updateState} />
-      </div>
+          </div>
           <div className="col">
             <FloatingTextInput labelText="country" index={12} updateFunction={updatefunctions.updateCountry} />
-      </div>
-      </div>
+          </div>
+        </div>
 
         <FloatingTextInput labelText="Band" index={12} updateFunction={updatefunctions.updateBand} />
 
@@ -36,16 +36,16 @@ function ConfigForm() {
         <div className="row d-flex align-items-center">
           <div className="col">
             <SaveToMemoryButton />
-      </div>
+          </div>
           <div className="col">
             <ResetMemoryButton />
-      </div>
-      </div>
+          </div>
+        </div>
 
-      <div className="mb-3">
+        <div className="mb-3">
           <label className="form-label" htmlFor="bg_input">
-          {t("backgroundImage")} :
-        </label>
+            {t("backgroundImage")} :
+          </label>
           <input
             onChange={(e) => {
               updatefunctions.updateBgUrl(e)
