@@ -43,7 +43,7 @@ function ConfigForm() {
       </div>
 
       <div className="mb-3">
-        <label className="form-label" htmlFor="date_input">
+          <label className="form-label" htmlFor="bg_input">
           {t("backgroundImage")} :
         </label>
           <input
