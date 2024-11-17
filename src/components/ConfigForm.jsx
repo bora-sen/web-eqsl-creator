@@ -72,7 +72,8 @@ function ConfigForm() {
           </div>
         </div>
       </div>
-      <button className="btn btn-outline-primary w-100">{t("downloadCard")}</button>
+
+      <button className="btn btn-primary w-100">{t("downloadCard")}</button>
     </div>
   )
 }
