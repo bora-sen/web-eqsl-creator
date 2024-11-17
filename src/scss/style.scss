@@ -13,6 +13,6 @@ $theme-colors: (
 @import "bootstrap/scss/bootstrap";
 
 .preview-container {
-  width: 874px;
-  height: 620px;
+  min-width: 874px;
+  min-height: 620px;
 }
