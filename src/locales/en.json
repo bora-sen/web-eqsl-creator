@@ -1,12 +1,23 @@
 {
   "welcome": "Welcome to Web eQsl Card Creator!",
   "callsign": "Call Sign",
-  "toCallSign":"DX Callsign",
+  "toCallSign": "DX Callsign",
   "nameSurname": "Name & Surname",
   "date": "QSO Date",
   "message": "Your Message",
   "country": "Country",
-  "state":"State",
-  "downloadCard":"Download Card",
-  "backgroundImage":"Background Image"
+  "state": "State",
+  "downloadCard": "Download Card",
+  "backgroundImage": "Background Image",
+  "callsignPosition": "Call Sign Position",
+  "nameSurnamePosition": "Name & Surname Position",
+  "qsoInfoPosition": "QSO Info",
+  "countryStatePos": "State / Country",
+  "left": "Left",
+  "center": "Center",
+  "right": "Right",
+  "saveToLocalMemory": "Save To Memory",
+  "resetMemory": "Reset Memory",
+  "seeTheSourceCode": "See The Source Code Of This App",
+  "positionSettings":"Position Settings"
 }

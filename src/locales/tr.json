@@ -8,5 +8,16 @@
   "country": "Ülke",
   "state": "Şehir",
   "downloadCard": "Kartı İndir",
-  "backgroundImage": "Arkaplan"
+  "backgroundImage": "Arkaplan",
+  "callsignPosition": "Çağrı İşareti Pozisyonu",
+  "nameSurnamePosition": "Ad Soyad Pozisyonu",
+  "qsoInfoPosition": "QSO Bilgileri",
+  "countryStatePos": "Şehir / Ülke",
+  "left": "Sol",
+  "center": "Orta",
+  "right": "Sağ",
+  "saveToLocalMemory": "Hafızaya Kaydet",
+  "resetMemory": "Hafızayı Temizle",
+  "seeTheSourceCode": "Bu Projenin Kaynak Kodunu Görüntüle",
+  "positionSettings": "Pozisyon Ayarları"
 }
