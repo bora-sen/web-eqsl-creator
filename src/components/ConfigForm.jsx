@@ -1,66 +1,76 @@
 import React from "react"
+import { FloatingDateInput, ResetMemoryButton, SaveToMemoryButton, DropDownPositionInput, FloatingTextInput } from "../components"
+import ContextUpdateFunctions from "../utils/ContextUpdateFunctions"
 import { useLanguage } from "../Context/LanguageContext"
-import { action_types, useConfigContext } from "../Context/ConfigContext"
 
 function ConfigForm() {
+  const updatefunctions = ContextUpdateFunctions()
   const { t } = useLanguage()
   return (
-    <div className="p-3">
-      <div className="mb-3 form-floating">
-        <input onChange={(e) => updateCallsign(e)} className="form-control" required id="callsign_input" type="text" />
-        <label className="" htmlFor="callsign_input">
-          {t("callsign")} :
-        </label>
+    <div className="p-3 bg-body-tertiary">
+      <div className="mb-5">
+        <div className="row">
+          <div className="col">
+            <FloatingTextInput labelText="callsign" index={10} updateFunction={updatefunctions.updateCallsign} />
+          </div>
+          <div className="col">
+            <FloatingTextInput labelText="toCallSign" index={11} updateFunction={updatefunctions.updateToCallSign} />
+          </div>
       </div>
 
-      <div className="mb-3 form-floating">
-        <input onChange={(e) => updateToCallSign(e)} className="form-control" required id="tocallsign_input" type="text" />
-        <label className="" htmlFor="tocallsign_input">
-          {t("toCallSign")} :
-        </label>
+        <FloatingTextInput labelText="nameSurname" index={12} updateFunction={updatefunctions.updateNameSurname} />
+
+        <div className="row">
+          <div className="col">
+            <FloatingTextInput labelText="state" index={12} updateFunction={updatefunctions.updateState} />
+      </div>
+          <div className="col">
+            <FloatingTextInput labelText="country" index={12} updateFunction={updatefunctions.updateCountry} />
+      </div>
       </div>
 
-      <div className="mb-3 form-floating">
-        <input onChange={(e) => updateNameSurname(e)} className="form-control" required id="nameSurname_input" type="text" />
-        <label className="" htmlFor="nameSurname_input">
-          {t("nameSurname")} :
-        </label>
-      </div>
+        <FloatingTextInput labelText="Band" index={12} updateFunction={updatefunctions.updateBand} />
 
-      <div className="mb-3 form-floating">
-        <input onChange={(e) => updateCountry(e)} className="form-control" required id="country_input" type="text" />
-        <label className="" htmlFor="country_input">
-          {t("country")} :
-        </label>
-      </div>
+        <FloatingDateInput labelText="date" index={30} updateFunction={updatefunctions.updateDate} />
 
-      <div className="mb-3 form-floating">
-        <input onChange={(e) => updateState(e)} className="form-control" required id="state_input" type="text" />
-        <label className="" htmlFor="state_input">
-          {t("state")} :
-        </label>
+        <div className="row d-flex align-items-center">
+          <div className="col">
+            <SaveToMemoryButton />
       </div>
-
-      <div className="mb-3 form-floating">
-        <input onChange={(e) => updateBand(e)} className="form-control" required id="band_input" type="text" />
-        <label className="" htmlFor="band_input">
-          Band :
-        </label>
+          <div className="col">
+            <ResetMemoryButton />
       </div>
-
-      <div className="mb-3 form-floating">
-        <input onChange={(e) => updateDate(e)} className="form-control" required id="date_input" type="date" />
-        <label className="" htmlFor="date_input">
-          {t("date")} :
-        </label>
       </div>
 
       <div className="mb-3">
         <label className="form-label" htmlFor="date_input">
           {t("backgroundImage")} :
         </label>
+          <input
+            onChange={(e) => {
+              updatefunctions.updateBgUrl(e)
+            }}
+            className="form-control"
+            required
+            accept="image/*"
+            id="bg_input"
+            type="file"
+          />
+        </div>
+      </div>
 
-        <input onChange={(e) => updateDate(e)} className="form-control" required id="date_input" type="file" />
+      <div className="my-3">
+        <span>{t("positionSettings") + " :"}</span>
+        <div className="row">
+          <div className="col">
+            <DropDownPositionInput index={5151} labelText="callsign" updateFunction={updatefunctions.updateCallSignPos} />
+            <DropDownPositionInput index={5454} labelText="countryStatePos" updateFunction={updatefunctions.updateStateCountryPos} />
+          </div>
+          <div className="col">
+            <DropDownPositionInput index={5252} labelText="nameSurname" updateFunction={updatefunctions.updateNameSurnamePos} />
+            <DropDownPositionInput index={5353} labelText="qsoInfoPosition" updateFunction={updatefunctions.updateQsoInfoPos} />
+          </div>
+        </div>
       </div>
       <button className="btn btn-outline-primary w-100">{t("downloadCard")}</button>
     </div>
