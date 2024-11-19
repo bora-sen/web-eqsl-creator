@@ -14,7 +14,7 @@ function App() {
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, harum. Recusandae libero velit fuga?</p>
           </div>
           <div className="row">
-            <div className="col">
+            <div className="col d-flex justify-items-center align-items-center">
               <ConfigForm />
             </div>
             <div className="col">
