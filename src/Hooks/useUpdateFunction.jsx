@@ -1,7 +1,7 @@
 import { action_types, useConfigContext } from "../Context/ConfigContext"
 
 function ContextUpdateFunctions() {
-  const { state, dispatch } = useConfigContext()
+  const { dispatch } = useConfigContext()
 
   function updateCallsign(e) {
     dispatch({
@@ -46,7 +46,7 @@ function ContextUpdateFunctions() {
   }
 
   function updateDate(e) {
-    let newDate = new Date(e.target.value).toDateString()
+    let newDate = new Date(e.target.value)
     dispatch({
       type: action_types.UPDATE_DATE,
       payload: newDate,
@@ -102,8 +102,21 @@ function ContextUpdateFunctions() {
         payload: newUrl.toString(),
       })
     }
+  }
 
-    console.log("Background Image is Set To -> ", state.bgUrl)
+  function updateQsoMode(e) {
+    dispatch({
+      type: action_types.UPDATE_MODE,
+      payload: e.target.value,
+    })
+  }
+
+  function updateTime(e) {
+    let newDate = new Date(e.target.value)
+    dispatch({
+      type: action_types.UPDATE_TIME,
+      payload: newDate,
+    })
   }
 
   return {
@@ -119,6 +132,8 @@ function ContextUpdateFunctions() {
     updateToCallSign,
     updateStateCountryPos,
     updateBgUrl,
+    updateQsoMode,
+    updateTime,
   }
 }
 

@@ -1,6 +1,6 @@
 import React from "react"
-import { FloatingDateInput, ResetMemoryButton, SaveToMemoryButton, DropDownPositionInput, FloatingTextInput } from "../components"
-import ContextUpdateFunctions from "../utils/ContextUpdateFunctions"
+import { FloatingDateInput, ResetMemoryButton, SaveToMemoryButton, DropDownPositionInput, FloatingTextInput, DownloadCardButton } from "../components"
+import ContextUpdateFunctions from "../Hooks/useUpdateFunction"
 import { useLanguage } from "../Context/LanguageContext"
 
 function ConfigForm() {
