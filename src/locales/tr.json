@@ -19,5 +19,6 @@
   "saveToLocalMemory": "Hafızaya Kaydet",
   "resetMemory": "Hafızayı Temizle",
   "seeTheSourceCode": "Bu Projenin Kaynak Kodunu Görüntüle",
-  "positionSettings": "Pozisyon Ayarları"
+  "positionSettings": "Pozisyon Ayarları",
+  "mode": "Frekans Modu"
 }

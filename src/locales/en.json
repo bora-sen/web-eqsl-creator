@@ -19,5 +19,6 @@
   "saveToLocalMemory": "Save To Memory",
   "resetMemory": "Reset Memory",
   "seeTheSourceCode": "See The Source Code Of This App",
-  "positionSettings":"Position Settings"
+  "positionSettings": "Position Settings",
+  "mode": "Frequency Mode"
 }

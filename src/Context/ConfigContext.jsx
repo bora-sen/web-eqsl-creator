@@ -12,7 +12,9 @@ export const action_types = {
   UPDATE_STATE: "UPDATE_STATE",
   UPDATE_STATE_COUNTRY_POS: "UPDATE_STATE_COUNTRY_POS",
   UPDATE_BAND: "UPDATE_BAND",
+  UPDATE_MODE: "UPDATE_MODE",
   UPDATE_DATE: "UPDATE_DATE",
+  UPDATE_TIME: "UPDATE_TIME",
   UPDATE_BG_URL: "UPDATE_BG_URL",
 }
 
@@ -33,7 +35,6 @@ function ConfigReducer(state, action) {
         ...state,
         toCallSign: action.payload,
       }
-
     case action_types.UPDATE_TOCALLSIGN_POS:
       return {
         ...state,
@@ -64,7 +65,6 @@ function ConfigReducer(state, action) {
         ...state,
         state: action.payload,
       }
-
     case action_types.UPDATE_STATE_COUNTRY_POS:
       return {
         ...state,
@@ -81,10 +81,22 @@ function ConfigReducer(state, action) {
         date: action.payload,
       }
 
+    case action_types.UPDATE_TIME:
+      return {
+        ...state,
+        time: action.payload,
+      }
+
     case action_types.UPDATE_BG_URL:
       return {
         ...state,
         bgUrl: action.payload,
+      }
+
+    case action_types.UPDATE_MODE:
+      return {
+        ...state,
+        mode: action.payload,
       }
 
     default:
@@ -101,7 +113,9 @@ export function ConfigProvider({ children }) {
     country: "Türkiye",
     state: "İstanbul",
     band: "2M",
+    mode: "SSB",
     date: new Date().toDateString(),
+    time: new Date().toTimeString(),
     callsignPos: "center",
     nameSurnamePos: "center",
     toCallSignPos: "end",

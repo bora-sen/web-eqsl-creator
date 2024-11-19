@@ -29,9 +29,17 @@ function ConfigForm() {
           </div>
         </div>
 
-        <FloatingTextInput labelText="Band" index={12} updateFunction={updatefunctions.updateBand} />
-
         <FloatingDateInput labelText="date" index={30} updateFunction={updatefunctions.updateDate} />
+
+        <div className="row">
+          <div className="col">
+            <FloatingTextInput labelText="Band" index={12} updateFunction={updatefunctions.updateBand} />
+          </div>
+          <div className="col">
+            {/* TODO: Make this into a dropdown list of qso modes. */}
+            <FloatingTextInput labelText="mode" index={12} updateFunction={updatefunctions.updateQsoMode} />
+          </div>
+        </div>
 
         <div className="row d-flex align-items-center">
           <div className="col">
