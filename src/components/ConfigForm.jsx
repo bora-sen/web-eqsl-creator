@@ -72,8 +72,8 @@ function ConfigForm() {
           </div>
         </div>
       </div>
+      <DownloadCardButton />
 
-      <button className="btn btn-primary w-100">{t("downloadCard")}</button>
     </div>
   )
 }
