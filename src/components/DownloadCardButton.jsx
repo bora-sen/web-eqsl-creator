@@ -1,11 +1,11 @@
 import React from "react"
-import { useLanguage } from "../Context/LanguageContext"
 import html2canvas from "html2canvas"
-import { useConfigContext } from "../Context/ConfigContext"
+import { useTranslation } from "react-i18next"
+import { useSelector } from "react-redux"
 
 function DownloadCardButton() {
-  const { t } = useLanguage()
-  const { state } = useConfigContext()
+  const { t } = useTranslation()
+  const {callSign,dxCallSign,mode} = useSelector((state) => state.UserInfo)
   async function handleDownloadClick(e) {
     e.preventDefault()
     const previewCardEl = document.querySelector("#eqsl_card_preview")
@@ -14,7 +14,7 @@ function DownloadCardButton() {
     })
     const previewImage = previewCanvas.toDataURL("image/jpeg")
     let downLinkEl = document.createElement("a")
-    let fileName = `${state.callsign}-${state.toCallSign}-${state.mode}-`
+    let fileName = `${callSign}-${dxCallSign}-${mode}-`
     downLinkEl.href = previewImage
     downLinkEl.download = fileName
     downLinkEl.click()

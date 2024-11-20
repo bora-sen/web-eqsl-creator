@@ -1,8 +1,8 @@
 import React from "react"
-import { useLanguage } from "../Context/LanguageContext"
+import { useTranslation } from "react-i18next"
 
 function ResetMemoryButton() {
-  const { t } = useLanguage()
+  const { t } = useTranslation()
   return <button className="btn btn-outline-secondary w-100 my-3">{t("resetMemory")}</button>
 }
 

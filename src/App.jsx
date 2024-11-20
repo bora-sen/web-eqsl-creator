@@ -1,9 +1,9 @@
 import { ConfigForm, Footer, Header } from "./components"
 import CardPreview from "./components/CardPreview"
-import { useLanguage } from "./Context/LanguageContext"
+import { useTranslation } from "react-i18next"
 
 function App() {
-  const { t } = useLanguage()
+  const { t } = useTranslation()
   return (
     <>
       <Header />

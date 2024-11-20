@@ -1,8 +1,8 @@
 import React from "react"
-import { useLanguage } from "../Context/LanguageContext"
+import { useTranslation } from "react-i18next"
 
 function Footer() {
-  const {t} = useLanguage()
+  const {t} = useTranslation()
   return (
     <footer className="bg-dark">
       <div className="container d-flex justify-content-between align-items-center px-3 py-2">

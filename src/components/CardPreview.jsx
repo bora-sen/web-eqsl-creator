@@ -1,22 +1,24 @@
-import { useConfigContext } from "../Context/ConfigContext"
+import { useSelector } from "react-redux"
 import s from "./CardPreview.module.css"
 
 function CardPreview() {
-  const { state } = useConfigContext()
+  const { callSign, dxCallSign, nameSurname, country, state, band, mode, date } = useSelector((state) => state.UserInfo)
+  const { callSignPos, nameSurnamePos, qsoInfoPos, stateCountryPos, bgUrl } = useSelector((state) => state.PreviewSettings)
+
   return (
     <div className="container d-flex align-items-center justify-content-center p-5 fw-bold">
-      <div id="eqsl_card_preview" style={{ backgroundImage: `url(${state.bgUrl})` }} className={`preview-container shadow position-relative pe-none`}>
-        <span className={`${s.previewCallsign} text-${state.callsignPos}`}>{state.callsign}</span>
-        <span className={`${s.previewNameSurname} text-${state.nameSurnamePos}`}>{state.nameSurname}</span>
-        <div className={`${s.previewInfoContainer} text-${state.qsoInfoPos}`}>
+      <div id="eqsl_card_preview" style={{ backgroundImage: `url(${bgUrl})` }} className={`preview-container shadow position-relative pe-none`}>
+        <span className={`${s.previewCallsign} text-${callSignPos}`}>{callSign}</span>
+        <span className={`${s.previewNameSurname} text-${nameSurnamePos}`}>{nameSurname}</span>
+        <div className={`${s.previewInfoContainer} text-${qsoInfoPos}`}>
           <span>
-            TO: {state.toCallSign} Confirming 2-Way {state.mode} QSO, Band: {state.band}
+            TO: {dxCallSign} Confirming 2-Way {mode} QSO, Band: {band}
           </span>
-          <span>Date: {state.date.toString()}</span>
+          <span>Date: {`${new Date(date).toDateString()} - ${new Date(date).toLocaleTimeString()}`}</span>
         </div>
         <div>
-          <span className={`${s.previewAddress} text-${state.stateCountryPos}`}>
-            {state.state} / {state.country}
+          <span className={`${s.previewAddress} text-${stateCountryPos}`}>
+            {state} / {country}
           </span>
         </div>
       </div>

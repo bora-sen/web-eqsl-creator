@@ -1,9 +1,11 @@
 import React from "react"
-import { useLanguage } from "../Context/LanguageContext"
 import { Dropdown } from "bootstrap"
+import { useTranslation } from "react-i18next"
+import { useDispatch } from "react-redux"
 
 function DropDownPositionInput({ index, labelText, updateFunction }) {
-    const {t} = useLanguage()
+  const { t } = useTranslation()
+  const dispatch = useDispatch()
   return (
     <div id={`dropdown_${index}`} className="m-1">
       <button className="form-control dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -11,17 +13,35 @@ function DropDownPositionInput({ index, labelText, updateFunction }) {
       </button>
       <ul className="dropdown-menu">
         <li>
-          <a className="dropdown-item" onClick={(e) => {updateFunction("start",e)}} href="#">
+          <a
+            className="dropdown-item"
+            onClick={(e) => {
+              dispatch(updateFunction("start"))
+            }}
+            href="#"
+          >
             {t("left")}
           </a>
         </li>
         <li>
-          <a className="dropdown-item" onClick={(e) => {updateFunction("center",e)}} href="#">
+          <a
+            className="dropdown-item"
+            onClick={(e) => {
+              dispatch(updateFunction("center"))
+            }}
+            href="#"
+          >
             {t("center")}
           </a>
         </li>
         <li>
-          <a className="dropdown-item" onClick={(e) => {updateFunction("end",e)}} href="#">
+          <a
+            className="dropdown-item"
+            onClick={(e) => {
+              dispatch(updateFunction("end"))
+            }}
+            href="#"
+          >
             {t("right")}
           </a>
         </li>
