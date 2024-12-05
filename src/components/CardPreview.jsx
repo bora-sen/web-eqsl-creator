@@ -2,7 +2,7 @@ import { useSelector } from "react-redux"
 import s from "./CardPreview.module.css"
 
 function CardPreview() {
-  const { callSign, dxCallSign, nameSurname, country, state, band, mode, date } = useSelector((state) => state.UserInfo)
+  const { callSign, dxCallSign, nameSurname, country, city, band, mode, date } = useSelector((state) => state.UserInfo)
   const { callSignPos, nameSurnamePos, qsoInfoPos, stateCountryPos, bgUrl } = useSelector((state) => state.PreviewSettings)
 
   return (
@@ -18,7 +18,7 @@ function CardPreview() {
         </div>
         <div>
           <span className={`${s.previewAddress} text-${stateCountryPos}`}>
-            {state} / {country}
+            {city} / {country}
           </span>
         </div>
       </div>

@@ -6,7 +6,7 @@
   "date": "QSO Tarihi",
   "message": "Mesajınız",
   "country": "Ülke",
-  "state": "Şehir",
+  "city": "Şehir",
   "downloadCard": "Kartı İndir",
   "backgroundImage": "Arkaplan",
   "callsignPosition": "Çağrı İşareti Pozisyonu",
@@ -20,5 +20,6 @@
   "resetMemory": "Hafızayı Temizle",
   "seeTheSourceCode": "Bu Projenin Kaynak Kodunu Görüntüle",
   "positionSettings": "Pozisyon Ayarları",
-  "mode": "Frekans Modu"
+  "mode": "Frekans Modu",
+  "time": "QSO Time"
 }

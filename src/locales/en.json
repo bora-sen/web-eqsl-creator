@@ -6,13 +6,13 @@
   "date": "QSO Date",
   "message": "Your Message",
   "country": "Country",
-  "state": "State",
+  "city": "City",
   "downloadCard": "Download Card",
   "backgroundImage": "Background Image",
   "callsignPosition": "Call Sign Position",
   "nameSurnamePosition": "Name & Surname Position",
   "qsoInfoPosition": "QSO Info",
-  "countryStatePos": "State / Country",
+  "countryStatePos": "City / Country",
   "left": "Left",
   "center": "Center",
   "right": "Right",
@@ -20,5 +20,6 @@
   "resetMemory": "Reset Memory",
   "seeTheSourceCode": "See The Source Code Of This App",
   "positionSettings": "Position Settings",
-  "mode": "Frequency Mode"
+  "mode": "Frequency Mode",
+  "time": "QSO Time"
 }
