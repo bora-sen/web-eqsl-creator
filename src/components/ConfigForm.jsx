@@ -1,16 +1,27 @@
 import React from "react"
-import {
-  ResetMemoryButton,
-  SaveToMemoryButton,
-  DropDownPositionInput,
-  FloatingTextInput,
-  DownloadCardButton,
-  DateAndTimeInputs,
-} from "../components"
+import { ResetMemoryButton, SaveToMemoryButton, DropDownPositionInput, FloatingTextInput, DownloadCardButton, DateAndTimeInputs } from "../components"
 import { useDispatch } from "react-redux"
 import { useTranslation } from "react-i18next"
-import { setBgUrl, setCallSignPos, setNameSurnamePos, setQsoInfoPos, setStateCountryPos } from "../Stores/slices/PreviewSettings"
-import { setCallSign, setDxCallSign, setNameSurname, setState, setCountry, setBand, setMode} from "../Stores/slices/UserInfo"
+import {
+  removePreviewSettingsFromStorage,
+  savePreviewSettingsToLocalMemory,
+  setBgUrl,
+  setCallSignPos,
+  setNameSurnamePos,
+  setQsoInfoPos,
+  setStateCountryPos,
+} from "../Stores/slices/PreviewSettings"
+import {
+  setCallSign,
+  setDxCallSign,
+  setNameSurname,
+  setCity,
+  setCountry,
+  setBand,
+  setMode,
+  saveUserInfoToLocalMemory,
+  removeUserInfoFromLocalMemory,
+} from "../Stores/slices/UserInfo"
 
 function ConfigForm() {
   const { t } = useTranslation()
@@ -32,7 +43,7 @@ function ConfigForm() {
 
         <div className="row">
           <div className="col">
-            <FloatingTextInput labelText="state" index={12} updateFunction={setState} />
+            <FloatingTextInput labelText="state" index={12} updateFunction={setCity} />
           </div>
           <div className="col">
             <FloatingTextInput labelText="country" index={12} updateFunction={setCountry} />
@@ -53,10 +64,10 @@ function ConfigForm() {
 
         <div className="row d-flex align-items-center">
           <div className="col">
-            <SaveToMemoryButton />
+            <SaveToMemoryButton saveFunction={saveUserInfoToLocalMemory} />
           </div>
           <div className="col">
-            <ResetMemoryButton />
+            <ResetMemoryButton resetFunction={removeUserInfoFromLocalMemory} />
           </div>
         </div>
 
@@ -88,6 +99,15 @@ function ConfigForm() {
             <DropDownPositionInput index={5252} labelText="nameSurname" updateFunction={setNameSurnamePos} />
             <DropDownPositionInput index={5353} labelText="qsoInfoPosition" updateFunction={setQsoInfoPos} />
           </div>
+        </div>
+      </div>
+
+      <div className="row d-flex align-items-center">
+        <div className="col">
+          <SaveToMemoryButton saveFunction={savePreviewSettingsToLocalMemory} />
+        </div>
+        <div className="col">
+          <ResetMemoryButton resetFunction={removePreviewSettingsFromStorage} />
         </div>
       </div>
       <DownloadCardButton />
