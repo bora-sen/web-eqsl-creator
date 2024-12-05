@@ -1,17 +1,34 @@
 import { createSlice } from "@reduxjs/toolkit"
 
+function getDataFromLocalStorage(defaultValue) {
+  try {
+    let localObject = localStorage.getItem("PreviewSettings")
+    if (localObject === null) {
+      console.log("Data is not set!!!")
+      return defaultValue
+    } else {
+      return JSON.parse(localObject)
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const defaultState = {
+  callSign: "TA1TWB",
+  dxCallSign: "TB2AAA",
+  nameSurname: "Bora Şen",
+  country: "Türkiye",
+  city: "İstanbul",
+  band: "2M",
+  mode: "SSB",
+  date: new Date().toISOString(),
+}
+const initialState = getDataFromLocalStorage(defaultState)
+
 const UserInfoSlice = createSlice({
   name: "UserInfo",
-  initialState: {
-    callSign: "TA1TWB",
-    dxCallSign: "TB2AAA",
-    nameSurname: "Bora Şen",
-    country: "Türkiye",
-    state: "İstanbul",
-    band: "2M",
-    mode: "SSB",
-    date: new Date().toISOString(),
-  },
+  initialState,
   reducers: {
     setCallSign: (state, action) => {
       state.callSign = action.payload
@@ -25,8 +42,8 @@ const UserInfoSlice = createSlice({
     setCountry: (state, action) => {
       state.country = action.payload
     },
-    setState: (state, action) => {
-      state.state = action.payload
+    setCity: (state, action) => {
+      state.city = action.payload
     },
     setBand: (state, action) => {
       state.band = action.payload
@@ -49,14 +66,36 @@ const UserInfoSlice = createSlice({
       updatedDate.setMinutes(minutes)
       state.date = updatedDate.toISOString()
     },
-    saveUserInfoToLocalMemory: () => {
-      //TODO: Save info to localstorage
-      console.log("Saving current User Info to Local Memory Memory..")
+    saveUserInfoToLocalMemory: (state) => {
+      const { callSign, nameSurname, city, country } = state
+      const UserInfo = { callSign, nameSurname, city, country }
+      const ParsedUserInfo = JSON.stringify(UserInfo)
+      localStorage.setItem("UserInfo", ParsedUserInfo)
+      console.info("Saved 'UserInfo' to LocalStorage!")
+    },
+    removeUserInfoFromLocalMemory: () => {
+      if (localStorage.getItem("UserInfo") !== undefined) {
+        localStorage.removeItem("UserInfo")
+        console.info("Removing 'UserInfo' from LocalStorage!")
+      } else {
+        console.info("There is no 'UserInfo' in LocalStorage.")
+      }
     },
   },
 })
 
-export const { setCallSign, setDxCallSign, setNameSurname, setCountry, setState, setBand, setMode, setDay, setTime, saveUserInfoToLocalMemory } =
-  UserInfoSlice.actions
+export const {
+  setCallSign,
+  setDxCallSign,
+  setNameSurname,
+  setCountry,
+  setCity,
+  setBand,
+  setMode,
+  setDay,
+  setTime,
+  saveUserInfoToLocalMemory,
+  removeUserInfoFromLocalMemory,
+} = UserInfoSlice.actions
 
 export default UserInfoSlice.reducer
