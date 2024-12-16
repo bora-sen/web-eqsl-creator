@@ -11,7 +11,7 @@ function App() {
         <section className="container mx-auto pt-3">
           <div className="w-full text-center">
             <span className="fw-bold fs-1">{t("welcome")}</span>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat, harum. Recusandae libero velit fuga?</p>
+            <p>{t("description")}</p>
           </div>
           <div className="row">
             <div className="col d-flex justify-items-center align-items-center">

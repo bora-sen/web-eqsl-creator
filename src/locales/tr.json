@@ -1,5 +1,6 @@
 {
   "welcome": "eQsl Kart Oluşturucuya Hoşgeldin!",
+  "description":"Amatör radyo meraklılarının E-QSL kartlarını hızlıca tasarlayıp özelleştirmesine olanak tanıyan bir açık kaynak kodlu web yazılımı.",
   "callsign": "Çağrı İşareti",
   "toCallSign": "DX Çağrı İşareti",
   "nameSurname": "Ad Soyad",
