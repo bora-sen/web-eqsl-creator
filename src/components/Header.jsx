@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux"
 import { setLang } from "../Stores/slices/Language"
 
 function Header() {
-
   const dispatch = useDispatch()
 
   return (
@@ -15,8 +14,8 @@ function Header() {
           eQSL Creator
         </a>
         <div className="d-flex align-items-center justify-content-evenly gap-2">
-          <img onClick={(e) => dispatch(setLang("tr"))} width="32px" className="  rounded-5" src={TRIcon} alt="" />
-          <img onClick={(e) => dispatch(setLang("en"))} width="32px" className="  rounded-5" src={ENIcon} alt="" />
+          <img onClick={(e) => dispatch(setLang("tr"))} width="32px" className="rounded-5 " src={TRIcon} alt="Türkiye Bayrağı" />
+          <img onClick={(e) => dispatch(setLang("en"))} width="32px" className="rounded-5 " src={ENIcon} alt="Amerika Bayrağı" />
         </div>
       </div>
     </header>
