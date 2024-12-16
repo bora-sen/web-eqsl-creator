@@ -19,7 +19,7 @@ const defaultSettings = {
   dxCallSignPos: "end",
   qsoInfoPos: "center",
   stateCountryPos: "end",
-  bgUrl: "/images/default-bg.webp",
+  bgUrl: "/web-eqsl-creator/images/default-bg.webp",
 }
 const initialState = getDataFromLocalStorage(defaultSettings)
 

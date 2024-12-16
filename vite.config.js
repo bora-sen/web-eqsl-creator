@@ -7,4 +7,5 @@ export default defineConfig({
   build: {
     outDir: "build",
   },
+  base:"/web-eqsl-creator/"
 })
